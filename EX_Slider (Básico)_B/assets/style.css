@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.slider {
+    width: 80%;/* Define a largura do conteiner do slider*/
+    height: 450px;/* Define a altura do conteiner do slider*/
+    overflow: hidden;/* Esconde qualquer conteudo qu exceda as dimensões do slider */
+    position: relative;/* Define o contexto de posicionamneto para os elementos filhos*/
+    margin: auto;/* Centraliza os slides*/
+    margin-top: 50px;/* Afasta o container do topo*/
+}
+
+.slide {
+    width: 100%;/* Define a largura do slide para ocupar todo o conteiner do slider*/
+    height: 100%;/* Define a altura do slide para ocupar todo o conteiner do slider*/
+    position: relative;/* Permite posicionar os lsides dentro do conteiner*/
+    opacity: 0;/*Define a opacidade inicial do slide como tranparente*/
+    transition: opacity 0.5s ease-in-out;/* Adiciona uma transição suave para a propriedade de opacidade*/
+}
+
+.slide img {
+    width: 100%;/* Faz com a imagem ocupe toda a largura do slide*/
+    height: 100%;/* Faz com a imagem ocupe toda a altura do slide*/
+    object-fit: cover;/* Redimento a imagem para preencher o espaço disponivel no slide*/
+}
+
+.slide.active {
+    opacity: 1;/* Define a opacidade do slide ativo como opaco (visivel)*/
+}
+
+.slide:nth-child(1) {
+    animation: fade 6s infinite;/* Adicione a animação 'fade' ao primeiro slide*/
+}
+
+.slide:nth-child(2) {
+    animation: fade 6s infinite 2s;/* Adicione a animação 'fade' ao segundo slide com atraso de 2 segudos*/
+}
+
+.slide:nth-child(3) {
+    animation: fade 6s infinite 4s;/* Adicione a animação 'fade' ao terceiro slide com atraso de 4 segudos*/
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;/* Define a opacidade inicial da animação como transparente*/
+    }
+    25% {
+        opacity: 1;/* Define a opacidade intermediaria da animação como opaco (visivel)*/
+    }
+    75% {
+        opacity: 1; /*Define a opacidade intermediaria da animação como opaco (visivel)*/
+    }
+    100% {
+        opacity: 0;/* Define a opacidade final  da animação como transparente*/
+    }
+}
