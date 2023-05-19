@@ -104,5 +104,161 @@ span {
     padding: 0 5%;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.navrio {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+
+}
+
+.navrio img {
+    width: 20px;
+}
+
+.navrio ul li {
+   list-style: none;
+   display: inline-block;
+   margin-left: 40px;
+   text-transform: uppercase;
+   letter-spacing: 2px;/* Define o espaçamento entre as letras como 2px*/ 
+}
+
+.navrio ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+}
+
+.conteudo {
+    text-align: center;
+}
+
+.conteudo h1 {
+    font-size: 70px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+/* Define o estilo aplicado a elementos <h1> dentro de .conteudo quando o mouse estiver em cima*/
+
+.conteudo h1:hover {
+    -webkit-text-stroke: 2px #fff;/* Adiciona um contorno de texto de 2px branco*/
+    color: transparent;/* Define a cor do texto como transparente*/
+}
+
+.conteudo a {
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    font-size: 24px;
+    border: 2px solid #fff;
+    padding: 14px 70px;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+
+.back-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* Cor de fundo pagina e cor da fonte*/
+
+.bodycontato {
+    background: #999;
+    color: white;
+    font-weight: 400;
+    display: flex;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.contato {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*____________________________________________________*/
+/* Album de fotos (Galeria)*/
+
+main#album {
+    /* Renderiza os elementos*/
+    display: flex;
+    /* Coloca o conteudo em linha e não permite a quebra de linha*/
+    flex-flow: row wrap;
+}
+
+section.coluna {
+    /*border: 1px dashed black*/
+    flex: 1 1 100%;
+    padding: 0px 5px;
+}
+
+section > img {
+    /* Especifica a largura e a altura de uma imagem*/
+    width: 100%;
+    /* Indica a distancia ma parte inferior do conteudo*/
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Define o estilo aplicado a elementos .back-video quando a relação de aspecto minima for 16/9*/
+@media (min-aspect-radio: 16/9) {
+    .back-video {
+        width: 100%;/* Define a largura como 100%*/
+        height: auto;/* Define a altura como automatica*/
+    }
+}
+
+/* Define o estilo aplicado a elementos .back-video quando a relação de aspecto maxima for 16/9*/
+@media (max-aspect-radio: 16/9) {
+    .back-video {
+        width:auto ;/* Define a largura como automatica*/
+        height: 100%;/* Define a altura como 100%*/
+    }
+}
+
+/* Anima para aparecer*/
+@keyframes backcolor {
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .titulo {
+        font-size: 40px;
+    }
+}
+
+/*_______________________________________________________*/
+/* Responsividade (Album de fotos)*/
+
+/* Tamaho de tablets*/
+@media screen and (min-width: 768px) and (max-width: 992px){
+    section.coluna {
+        flex: 1 1 50%
+    }
+    
+}
+
+/* Tamanho de celulares*/
+@media screen and (min-width: 992px){
+    section.coluna {
+        flex: 1 1 25%
+    }
 }
